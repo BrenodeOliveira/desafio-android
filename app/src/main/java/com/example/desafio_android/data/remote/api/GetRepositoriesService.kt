@@ -1,6 +1,6 @@
-package com.example.desafio_android.data.api
+package com.example.desafio_android.data.remote.api
 
-import com.example.desafio_android.data.model.ItemsData
+import com.example.desafio_android.data.remote.model.ItemsData
 import retrofit2.http.GET
 
 internal interface GetRepositoriesService {

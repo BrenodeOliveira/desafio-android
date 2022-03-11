@@ -1,7 +1,7 @@
-package com.example.desafio_android.data.source
+package com.example.desafio_android.data.remote.source
 
-import com.example.desafio_android.data.api.GetRepositoriesService
-import com.example.desafio_android.data.model.ItemsData
+import com.example.desafio_android.data.remote.api.GetRepositoriesService
+import com.example.desafio_android.data.remote.model.ItemsData
 
 internal class ReposDataSourceImpl(private val service: GetRepositoriesService): ReposDataSource {
 
