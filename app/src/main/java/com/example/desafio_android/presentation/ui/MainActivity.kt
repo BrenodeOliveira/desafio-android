@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        viewModel.getRepos()
     }
 
     override fun onResume() {
         super.onResume()
-        viewModel.getRepos()
 
         setupRecycler()
     }
