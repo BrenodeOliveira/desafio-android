@@ -54,13 +54,25 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.4'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
 
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.3"
+    implementation "com.squareup.okhttp3:okhttp:4.9.3"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
     //Mockk
     testImplementation "io.mockk:mockk:1.12.0"
-    testImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
+    androidTestImplementation "io.mockk:mockk-android:1.11.0"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1"
+    androidTestImplementation "io.insert-koin:koin-test-junit4:3.0.2"
+    implementation "com.squareup.okhttp3:mockwebserver:4.9.3"
+
+    androidTestImplementation "androidx.test:runner:1.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.4.0"
+    androidTestImplementation "androidx.test:core-ktx:1.4.0"
 
     //For runBlockingTest, CoroutineDispatcher etc.
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1"

@@ -9,12 +9,13 @@ import com.example.desafio_android.data.remote.source.ReposDataSource
 import com.example.desafio_android.data.remote.source.ReposDataSourceImpl
 import com.example.desafio_android.domain.usecase.GetReposUseCase
 import com.example.desafio_android.presentation.viewmodel.MainViewModel
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val dataModule = module {
     factory {
-        HttpClient(retrofit = ApiService.initRetrofit())
+        HttpClient(retrofit = ApiService(androidContext()).initRetrofit())
     }
 
     factory {
