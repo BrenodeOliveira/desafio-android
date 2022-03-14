@@ -17,15 +17,15 @@ class ApiService(context: Context) {
 
     private val okHttp: OkHttpClient =
         OkHttpClient.Builder()
-            .cache(Cache(context.cacheDir, (10*1024)))
+            .cache(Cache(context.cacheDir, (10*1024*1024).toLong()))
             .addInterceptor(interceptor)
             .build()
-
 
     fun initRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttp)
             .build()
     }
 }

@@ -3,4 +3,5 @@
     <string name="txt_title">Nome do repositório</string>
     <string name="txt_qtdstar">Qtd star</string>
     <string name="txt_qtdforks">Qtd Forks</string>
+    <string name="txt_no_internet">Você está sem internet</string>
 </resources>

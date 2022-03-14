@@ -2,10 +2,7 @@ package com.example.desafio_android.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.desafio_android.R
-import com.example.desafio_android.data.remote.api.GetRepositoriesService
-import com.example.desafio_android.data.remote.source.ReposDataSource
-import com.example.desafio_android.data.remote.source.ReposDataSourceImpl
+import androidx.core.view.isVisible
 import com.example.desafio_android.databinding.ActivityMainBinding
 import com.example.desafio_android.presentation.adapter.ReposAdapter
 import com.example.desafio_android.presentation.viewmodel.MainViewModel
@@ -22,12 +19,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         viewModel.getRepos()
+        setupLoading()
     }
 
     override fun onResume() {
         super.onResume()
 
         setupRecycler()
+    }
+
+    private fun setupLoading() {
+        viewModel.loadingList.observe(this) {
+            it.let {
+                binding.loadingBar.isVisible = it
+            }
+        }
     }
 
     private fun setupRecycler() {
